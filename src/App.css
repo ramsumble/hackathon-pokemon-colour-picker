@@ -1,0 +1,33 @@
+
+.App {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+
+.colour-palette {
+  display: flex;
+  flex-direction: row;
+}
+
+.colour-dot {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin: 15px;
+}
+
+/* keep for Pokeball spinner later */
+/* @keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
