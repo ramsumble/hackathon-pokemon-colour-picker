@@ -21,3 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+public/logo512.png
+*.png
+*.ico
+src/logo.svg
