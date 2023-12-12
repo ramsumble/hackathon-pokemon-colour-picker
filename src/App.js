@@ -7,9 +7,7 @@ function App() {
 
   return (
     <div className="App">
-
       <ColourPalet colours={myColours} />
-
     </div>
   );
 }

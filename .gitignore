@@ -25,3 +25,4 @@ public/logo512.png
 *.png
 *.ico
 src/logo.svg
+src/.env
