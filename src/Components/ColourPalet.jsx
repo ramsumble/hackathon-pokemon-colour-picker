@@ -1,20 +1,24 @@
+// ColourPalet.jsx
 import React, { useState } from 'react';
-import { PokemonInfo } from './PokemonInfo';
+import DropdownMenu from './DropDownMenu';
 
 export function ColourPalet({ colours }) {
   const [selectedPokemonNames, setSelectedPokemonNames] = useState(null);
-  const [showPokemonInfo, setShowPokemonInfo] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const clickColour = async (event) => {
+  const fetchPokemonNames = async () => {
     const apiUrl = `https://pokeapi.co/api/v2/pokemon-color/1/`;
     const response = await fetch(apiUrl);
     const data = await response.json();
-
     const allPokemonNames = data.pokemon_species.map((pokemon) => pokemon.name);
     setSelectedPokemonNames(allPokemonNames);
-    
-    // Toggle the display of PokemonInfo
-    setShowPokemonInfo(!showPokemonInfo);
+
+    // Toggle the dropdown menu
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const clickColour = async (event) => {
+    await fetchPokemonNames();
   };
 
   const mouseOver = (event) => {
@@ -46,7 +50,7 @@ export function ColourPalet({ colours }) {
           ))}
         </div>
 
-        {showPokemonInfo && <PokemonInfo pokemonNames={selectedPokemonNames} />}
+        {isDropdownOpen && <DropdownMenu pokemonNames={selectedPokemonNames || []} />}
       </header>
     </div>
   );

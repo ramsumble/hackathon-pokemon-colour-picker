@@ -31,3 +31,13 @@
     transform: rotate(360deg);
   }
 } */
+
+.scrollable-menu {
+  max-height: 200px; /* Adjust the max height as needed */
+  max-width: 30%;
+  overflow-y: auto;
+}
+
+.menu {
+  list-style-type: none;
+}
