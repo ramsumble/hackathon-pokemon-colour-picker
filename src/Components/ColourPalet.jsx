@@ -3,6 +3,7 @@ import { PokemonInfo } from './PokemonInfo';
 
 export function ColourPalet({ colours }) {
   const [selectedPokemonNames, setSelectedPokemonNames] = useState(null);
+  const [showPokemonInfo, setShowPokemonInfo] = useState(false);
 
   const clickColour = async (event) => {
     const apiUrl = `https://pokeapi.co/api/v2/pokemon-color/1/`;
@@ -11,6 +12,9 @@ export function ColourPalet({ colours }) {
 
     const allPokemonNames = data.pokemon_species.map((pokemon) => pokemon.name);
     setSelectedPokemonNames(allPokemonNames);
+    
+    // Toggle the display of PokemonInfo
+    setShowPokemonInfo(!showPokemonInfo);
   };
 
   const mouseOver = (event) => {
@@ -42,7 +46,7 @@ export function ColourPalet({ colours }) {
           ))}
         </div>
 
-        <PokemonInfo pokemonNames={selectedPokemonNames} />
+        {showPokemonInfo && <PokemonInfo pokemonNames={selectedPokemonNames} />}
       </header>
     </div>
   );
