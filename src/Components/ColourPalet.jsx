@@ -6,8 +6,8 @@ export function ColourPalet({ colours }) {
   const [selectedPokemonNames, setSelectedPokemonNames] = useState(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const fetchPokemonNames = async () => {
-    const apiUrl = `https://pokeapi.co/api/v2/pokemon-color/1/`;
+  const fetchPokemonNames = async (colourIndex) => {
+    const apiUrl = `https://pokeapi.co/api/v2/pokemon-color/${Number(colourIndex) + 1}/`;
     const response = await fetch(apiUrl);
     const data = await response.json();
     const allPokemonNames = data.pokemon_species.map((pokemon) => pokemon.name);
@@ -18,7 +18,8 @@ export function ColourPalet({ colours }) {
   };
 
   const clickColour = async (event) => {
-    await fetchPokemonNames();
+    const colourIndex = event.target.getAttribute('data-index');
+    await fetchPokemonNames(colourIndex);
   };
 
   const mouseOver = (event) => {
