@@ -33,11 +33,28 @@
 } */
 
 .scrollable-menu {
-  max-height: 200px; /* Adjust the max height as needed */
-  max-width: 30%;
+  max-height: 200px; 
+  max-width: 25%;
+  background-color: #20242b;
   overflow-y: auto;
+  border: 2px solid #2e333b ;
+  border-radius: 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
 }
 
 .menu {
   list-style-type: none;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 25px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
 }
