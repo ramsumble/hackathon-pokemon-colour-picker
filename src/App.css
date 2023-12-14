@@ -34,7 +34,7 @@
 
 .scrollable-menu {
   max-height: 200px; 
-  max-width: 25%;
+  max-width: 26%;  /* smallest max-width to not display horizontal scrollbar*/
   background-color: #20242b;
   overflow-y: auto;
   border: 2px solid #2e333b ;
